@@ -27,5 +27,23 @@ public class TDAVector2D {
                 txtResultado.append("\nMultiplicacion: "+a.multiplicacion(b));
             }
         });
+        limpiarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtV1x.setText("");
+                txtV1y.setText("");
+                txtV2x.setText("");
+                txtV2y.setText("");
+                txtResultado.setText("");
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("TDAVector2D");
+        frame.setContentPane(new TDAVector2D().pGeneral);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }
