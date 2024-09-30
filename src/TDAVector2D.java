@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TDAVector2D {
     private JPanel pGeneral;
@@ -9,8 +11,21 @@ public class TDAVector2D {
     private JTextArea txtResultado;
     private JButton calcularButton;
     private JButton limpiarButton;
-
+    Vector2D a,b;
     public TDAVector2D() {
-        calcularButton.addActionListener(new );
+
+        calcularButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a= new Vector2D(Double.parseDouble(txtV1x.getText()), Double.parseDouble(txtV1y.getText()));
+                b= new Vector2D(Double.parseDouble(txtV2x.getText()), Double.parseDouble(txtV2y.getText()));
+
+                txtResultado.append("\nVector1: "+a.toString());
+                txtResultado.append("\nVector1: "+b.toString());
+                txtResultado.append("\nSuma: "+a.suma(b));
+                txtResultado.append("\nResta: "+a.resta(b));
+                txtResultado.append("\nMultiplicacion: "+a.multiplicacion(b));
+            }
+        });
     }
 }
